@@ -1,0 +1,149 @@
+@CHARSET "UTF-8";
+
+/*页面层容器*/
+#wrapper {
+	background-color: rgb(240, 245, 245);
+	border-bottom: 1px #d9dede solid;
+}
+
+#header {
+	width: 791px;
+	height: 71px;
+	margin-left: auto;
+	margin-right: auto; 
+}
+
+#content {
+	width: 791px;
+	height: 489px;
+	margin: 0 auto;
+	border: 1px #e9edf1 solid;
+	border-radius: 6px;
+	background-color: #fff;
+	margin-bottom: 20px;
+}
+
+#section_h {
+	border-bottom: 1px #e9edf1 solid;
+	padding: 10px 0 10px 20px;
+	margin-top: 10px;
+	height: 26px;
+	font-size: 16px;
+	font-weight: normal;
+}
+
+#section_l {
+	width: 489px;
+	line-height: 1.2;
+	float: left;
+	font-size: 100%;
+	padding-top: 30px; 
+}
+
+#section_r {
+	width: 288px;
+	height: 160px;
+	line-height: 1.2;
+	float: right;
+	font-size: 100%;
+	margin-top: 36px; 
+	border-left: 1px #e9edf1 solid;
+}
+
+#msg_tip {
+	width: 90%;
+	height: 30px;
+	color: red;
+	margin: 20px auto 0px;
+	padding-left: 20px;
+	background-color: rgb(255, 235, 232);
+	border-top: 1px #dd3c10 solid;
+	border-bottom: 1px #dd3c10 solid;
+	line-height: 30px;
+	display: none;
+}
+
+#menu {
+	margin: 5px 20px 0 0;
+	float: right;
+}
+
+#menu ul {
+	list-style: none;
+	margin: 0px;
+}
+
+#menu ul li {
+	float: left;
+	margin: 0 5px;
+	display: block;
+}
+
+.menuDiv {
+	width: 1px;
+	height: 12px;
+	background: #999
+}
+
+#menu ul li a:link,#menu ul li a:visited {
+	font-weight: bold;
+	color: #666
+}
+
+#menu ul li a:hover {
+	
+}
+
+.err {
+	color: red;
+	font-size: small;
+}
+
+.font1 {
+	font-family: "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.font2 {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.label {
+	font-size: 14px;
+	text-align: right;
+	width: 100px;
+	float: left;
+	padding-right: 10px; 
+	line-height: 28px;
+}
+
+.inputl {
+	width: 200px;
+	padding: 5px 6px;
+	font-size: 13px;
+}
+
+.rowl {
+	margin-bottom: 20px;
+}
+
+.acts {
+	margin-left: 110px;
+}
+
+.loginbutton {
+	border: 1px #3282d0 solid;
+	padding: 3px 10px;
+	display: inline-block;
+	cursor: pointer;
+	box-shadow: 0px 0px 2px rgba(0,0,0,0.5);
+	background-color: rgb(64, 112, 208);
+	color: #fff;
+	border-radius: 3px;
+}
+
+.label_r {
+	font-size: 14px;
+	margin-left: 30px;
+	margin-top: 30px;
+}
+

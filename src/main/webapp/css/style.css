@@ -1,0 +1,53 @@
+@CHARSET "UTF-8";
+
+/*基本信息*/
+body, h1, h2, h3, h4, h5, h6 {
+	font: 12px Arial, sans-serif;
+	text-align: left;
+	background: #FFF;
+	margin: 0px;
+	padding: 0px;
+	color: #333;
+}
+
+p {
+	line-height: 16px;	
+}
+
+a {
+	text-decoration: none;
+}
+
+input[type=checkbox] {
+	vertical-align: middle;
+	outline: 0px none invert;
+}	
+
+.clearfix {
+	display: inline-block;
+}
+
+.clearfix:AFTER {
+	content: "\0020";
+	display: block;
+	height: 0px;
+	clear: both;
+	visibility: hidden;
+	zoom: 1;
+}
+
+#footer {
+	margin: 10px auto;
+}
+
+.b1 {
+	text-align: center;
+}
+
+.c6 {
+	color: #666;
+}
+
+.fr {
+	float: right;
+}
