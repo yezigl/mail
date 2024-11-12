@@ -5,11 +5,12 @@ package com.sohu.mail.controller;
 
 import java.util.List;
 
-import javax.annotation.Resource;
+import jakarta.annotation.Resource;
 
-import org.apache.commons.configuration.Configuration;
-import org.apache.commons.configuration.ConfigurationException;
-import org.apache.commons.configuration.PropertiesConfiguration;
+import org.apache.commons.configuration2.Configuration;
+import org.apache.commons.configuration2.PropertiesConfiguration;
+import org.apache.commons.configuration2.builder.fluent.Configurations;
+import org.apache.commons.configuration2.ex.ConfigurationException;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -27,10 +28,10 @@ public class MailController {
     @RequestMapping("/inbox")
     public ModelAndView inbox() {
         ModelAndView mv = new ModelAndView("mail/inbox");
-        
-        Configuration config = null;
+        Configurations configs = new Configurations();
+        PropertiesConfiguration config = null;
         try {
-            config = new PropertiesConfiguration("/mail.properties");
+            config = configs.properties("classpath:/mail.properties");
         } catch (ConfigurationException e) {
             e.printStackTrace();
         }

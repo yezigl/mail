@@ -6,18 +6,18 @@ package com.sohu.mail.service;
 import java.util.Date;
 import java.util.Properties;
 
-import javax.activation.DataHandler;
-import javax.activation.FileDataSource;
-import javax.mail.BodyPart;
-import javax.mail.Message.RecipientType;
-import javax.mail.MessagingException;
-import javax.mail.Multipart;
-import javax.mail.Session;
-import javax.mail.Transport;
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeBodyPart;
-import javax.mail.internet.MimeMessage;
-import javax.mail.internet.MimeMultipart;
+import jakarta.activation.DataHandler;
+import jakarta.activation.FileDataSource;
+import jakarta.mail.BodyPart;
+import jakarta.mail.Message;
+import jakarta.mail.MessagingException;
+import jakarta.mail.Multipart;
+import jakarta.mail.Session;
+import jakarta.mail.Transport;
+import jakarta.mail.internet.InternetAddress;
+import jakarta.mail.internet.MimeBodyPart;
+import jakarta.mail.internet.MimeMessage;
+import jakarta.mail.internet.MimeMultipart;
 
 import org.springframework.stereotype.Service;
 
@@ -95,9 +95,9 @@ public class SendService {
 
     /**
      * 
-     * @param name
+     * @param username
      *            String
-     * @param pass
+     * @param password
      *            String
      */
     public void setUsernameAndPassword(String username, String password) {
@@ -107,7 +107,7 @@ public class SendService {
 
     /**
      * 
-     * @param mailSubject
+     * @param subject
      *            String
      * @return boolean
      */
@@ -126,7 +126,7 @@ public class SendService {
 
     /**
      * 
-     * @param mailBody
+     * @param content
      *            String
      */
     public boolean setContent(String content) {
@@ -197,7 +197,7 @@ public class SendService {
         if (to == null)
             return false;
         try {
-            mimeMsg.setRecipients(RecipientType.TO, InternetAddress.parse(to));
+            mimeMsg.setRecipients(Message.RecipientType.TO, InternetAddress.parse(to));
         } catch (Exception e) {
             return false;
         }
@@ -213,7 +213,7 @@ public class SendService {
         if (copyto == null)
             return false;
         try {
-            mimeMsg.setRecipients(RecipientType.CC, InternetAddress.parse(copyto));
+            mimeMsg.setRecipients(Message.RecipientType.CC, InternetAddress.parse(copyto));
         } catch (Exception e) {
             return false;
         }
@@ -232,7 +232,7 @@ public class SendService {
             // Session mailSession = Session.getInstance(props, null);
             Transport transport = session.getTransport("smtp");
             transport.connect((String) props.get("mail.smtp.host"), username, password);
-            transport.sendMessage(mimeMsg, mimeMsg.getRecipients(RecipientType.TO));
+            transport.sendMessage(mimeMsg, mimeMsg.getRecipients(Message.RecipientType.TO));
             // transport.send(mimeMsg);
             transport.close();
         } catch (Exception e) {
